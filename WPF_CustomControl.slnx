@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CustomControls/CustomControls.csproj" />
+    <Project Path="src/Demo/Demo.csproj" />
+  </Folder>
+</Solution>

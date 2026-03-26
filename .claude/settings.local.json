@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p src)",
+      "Bash(dotnet new:*)",
+      "Bash(dotnet sln:*)",
+      "Bash(rm src/CustomControls/CustomControl1.cs)",
+      "Bash(mkdir -p src/CustomControls/Components)",
+      "Bash(mkdir -p src/Demo/Views)",
+      "Bash(mkdir -p src/Demo/ViewModels)",
+      "Bash(touch src/CustomControls/Components/.gitkeep)",
+      "Bash(touch src/Demo/Views/.gitkeep)",
+      "Bash(touch src/Demo/ViewModels/.gitkeep)",
+      "Bash(dotnet add:*)",
+      "Bash(dotnet build:*)"
+    ]
+  }
+}
