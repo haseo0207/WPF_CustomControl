@@ -25,6 +25,7 @@
             SelectionChanged="NavList_SelectionChanged">
             <ListBoxItem Padding="8,6" Content="RoundedComboBox" />
             <ListBoxItem Padding="8,6" Content="ScrollBar" />
+            <ListBoxItem Padding="8,6" Content="RoundedCheckBox" />
         </ListBox>
 
         <!--  구분선  -->

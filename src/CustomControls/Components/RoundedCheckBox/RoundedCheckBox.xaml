@@ -1,0 +1,151 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cc="clr-namespace:CustomControls.Components"
+    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+
+    <!--  Frozen Resources  -->
+    <SolidColorBrush
+        x:Key="RoundedCheckBox.BorderBrush"
+        po:Freeze="True"
+        Color="#C4C4C4" />
+    <SolidColorBrush
+        x:Key="RoundedCheckBox.BorderBrush.Hover"
+        po:Freeze="True"
+        Color="#90B8F8" />
+    <SolidColorBrush
+        x:Key="RoundedCheckBox.Background.Checked"
+        po:Freeze="True"
+        Color="#3D6FE0" />
+    <SolidColorBrush
+        x:Key="RoundedCheckBox.BorderBrush.Checked"
+        po:Freeze="True"
+        Color="#3D6FE0" />
+    <SolidColorBrush
+        x:Key="RoundedCheckBox.CheckMark"
+        po:Freeze="True"
+        Color="White" />
+    <SolidColorBrush
+        x:Key="RoundedCheckBox.Foreground"
+        po:Freeze="True"
+        Color="#333333" />
+    <SolidColorBrush
+        x:Key="RoundedCheckBox.Disabled.Foreground"
+        po:Freeze="True"
+        Opacity="0.4"
+        Color="#333333" />
+    <SolidColorBrush
+        x:Key="RoundedCheckBox.Disabled.BorderBrush"
+        po:Freeze="True"
+        Opacity="0.4"
+        Color="#C4C4C4" />
+    <SolidColorBrush
+        x:Key="RoundedCheckBox.Disabled.CheckMark"
+        po:Freeze="True"
+        Opacity="0.4"
+        Color="White" />
+    <SolidColorBrush
+        x:Key="RoundedCheckBox.Disabled.Background.Checked"
+        po:Freeze="True"
+        Opacity="0.4"
+        Color="#3D6FE0" />
+
+    <!--  Google Material Check Icon (M18 check path)  -->
+    <Geometry x:Key="RoundedCheckBox.CheckGeometry" po:Freeze="True">M 9.86 18 L 3.5 11.64 L 5.27 9.87 L 9.86 14.46 L 20.14 4.18 L 21.91 5.95 Z</Geometry>
+
+    <!--  Indeterminate Icon (horizontal line)  -->
+    <Geometry x:Key="RoundedCheckBox.IndeterminateGeometry" po:Freeze="True">M 5 11 L 19 11 L 19 13 L 5 13 Z</Geometry>
+
+    <Style TargetType="{x:Type cc:RoundedCheckBox}">
+        <Setter Property="Foreground" Value="{StaticResource RoundedCheckBox.Foreground}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{StaticResource RoundedCheckBox.BorderBrush}" />
+        <Setter Property="BorderThickness" Value="1.5" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="BoxSize" Value="18" />
+        <Setter Property="Padding" Value="8,0,0,0" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type cc:RoundedCheckBox}">
+                    <Grid x:Name="templateRoot" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!--  체크박스 박스  -->
+                        <Border
+                            x:Name="checkBoxBorder"
+                            Grid.Column="0"
+                            Width="{TemplateBinding BoxSize}"
+                            Height="{TemplateBinding BoxSize}"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}">
+
+                            <!--  Check Mark  -->
+                            <Path
+                                x:Name="checkMark"
+                                Margin="4"
+                                Data="{StaticResource RoundedCheckBox.CheckGeometry}"
+                                Fill="{StaticResource RoundedCheckBox.CheckMark}"
+                                Stretch="Uniform"
+                                Visibility="Collapsed" />
+                        </Border>
+
+                        <!--  콘텐츠 (텍스트 라벨)  -->
+                        <ContentPresenter
+                            Grid.Column="1"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            RecognizesAccessKey="True" />
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <!--  Checked  -->
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource RoundedCheckBox.Background.Checked}" />
+                            <Setter TargetName="checkBoxBorder" Property="BorderThickness" Value="0" />
+                            <Setter TargetName="checkMark" Property="Visibility" Value="Visible" />
+                        </Trigger>
+
+                        <!--  Indeterminate  -->
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource RoundedCheckBox.Background.Checked}" />
+                            <Setter TargetName="checkBoxBorder" Property="BorderThickness" Value="0" />
+                            <Setter TargetName="checkMark" Property="Data" Value="{StaticResource RoundedCheckBox.IndeterminateGeometry}" />
+                            <Setter TargetName="checkMark" Property="Visibility" Value="Visible" />
+                        </Trigger>
+
+                        <!--  Hover  -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="{StaticResource RoundedCheckBox.BorderBrush.Hover}" />
+                        </Trigger>
+
+                        <!--  Disabled  -->
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{StaticResource RoundedCheckBox.Disabled.Foreground}" />
+                            <Setter TargetName="checkBoxBorder" Property="BorderBrush" Value="{StaticResource RoundedCheckBox.Disabled.BorderBrush}" />
+                            <Setter TargetName="checkMark" Property="Fill" Value="{StaticResource RoundedCheckBox.Disabled.CheckMark}" />
+                        </Trigger>
+
+                        <!--  Disabled + Checked  -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="False" />
+                                <Condition Property="IsChecked" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="checkBoxBorder" Property="Background" Value="{StaticResource RoundedCheckBox.Disabled.Background.Checked}" />
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
