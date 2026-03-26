@@ -12,7 +12,9 @@
       "Bash(touch src/Demo/Views/.gitkeep)",
       "Bash(touch src/Demo/ViewModels/.gitkeep)",
       "Bash(dotnet add:*)",
-      "Bash(dotnet build:*)"
+      "Bash(dotnet build:*)",
+      "mcp__claude_ai_Microsoft_Learn__microsoft_docs_search",
+      "mcp__claude_ai_Microsoft_Learn__microsoft_docs_fetch"
     ]
   }
 }

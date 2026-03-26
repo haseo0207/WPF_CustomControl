@@ -1,0 +1,36 @@
+﻿<UserControl
+    x:Class="Demo.Views.RoundedComboBoxView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cc="clr-namespace:CustomControls.Components;assembly=CustomControls"
+    xmlns:vm="clr-namespace:Demo.ViewModels">
+
+    <UserControl.DataContext>
+        <vm:RoundedComboBoxViewModel />
+    </UserControl.DataContext>
+
+    <StackPanel
+        Width="240"
+        Margin="20"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+
+        <TextBlock
+            Margin="0,0,0,16"
+            FontSize="16"
+            FontWeight="SemiBold"
+            Text="RoundedComboBox" />
+
+        <cc:RoundedComboBox
+            CornerRadius="6"
+            ItemsSource="{Binding Items}"
+            MaxDropDownHeight="200"
+            PopupCornerRadius="6"
+            SelectedItem="{Binding SelectedItem}" />
+
+        <TextBlock Margin="0,12,0,0" Foreground="#666666">
+            <Run Text="Selected: " />
+            <Run Text="{Binding SelectedItem, Mode=OneWay}" />
+        </TextBlock>
+    </StackPanel>
+</UserControl>
