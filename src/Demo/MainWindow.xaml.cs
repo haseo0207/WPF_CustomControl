@@ -9,6 +9,7 @@ public partial class MainWindow : Window
     private readonly RoundedComboBoxView _roundedComboBoxView = new();
     private readonly ScrollBarView _scrollBarView = new();
     private readonly RoundedCheckBoxView _roundedCheckBoxView = new();
+    private readonly RoundedListViewView _roundedListViewView = new();
 
     public MainWindow()
     {
@@ -25,6 +26,7 @@ public partial class MainWindow : Window
             0 => _roundedComboBoxView,
             1 => _scrollBarView,
             2 => _roundedCheckBoxView,
+            3 => _roundedListViewView,
             _ => null
         };
     }
