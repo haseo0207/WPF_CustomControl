@@ -5,6 +5,7 @@
         <ResourceDictionary Source="/CustomControls;component/Components/ScrollBar/ScrollBarStyles.xaml" />
         <ResourceDictionary Source="/CustomControls;component/Components/RoundedCheckBox/RoundedCheckBox.xaml" />
         <ResourceDictionary Source="/CustomControls;component/Components/RoundedListView/RoundedListView.xaml" />
+        <ResourceDictionary Source="/CustomControls;component/Components/Pagination/Pagination.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

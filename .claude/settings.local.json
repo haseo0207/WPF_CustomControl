@@ -14,7 +14,8 @@
       "Bash(dotnet add:*)",
       "Bash(dotnet build:*)",
       "mcp__claude_ai_Microsoft_Learn__microsoft_docs_search",
-      "mcp__claude_ai_Microsoft_Learn__microsoft_docs_fetch"
+      "mcp__claude_ai_Microsoft_Learn__microsoft_docs_fetch",
+      "mcp__sequential-thinking__sequentialthinking"
     ]
   }
 }

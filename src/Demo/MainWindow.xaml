@@ -27,6 +27,7 @@
             <ListBoxItem Padding="8,6" Content="ScrollBar" />
             <ListBoxItem Padding="8,6" Content="RoundedCheckBox" />
             <ListBoxItem Padding="8,6" Content="RoundedListView" />
+            <ListBoxItem Padding="8,6" Content="Pagination" />
         </ListBox>
 
         <!--  구분선  -->

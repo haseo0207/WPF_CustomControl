@@ -10,6 +10,7 @@ public partial class MainWindow : Window
     private readonly ScrollBarView _scrollBarView = new();
     private readonly RoundedCheckBoxView _roundedCheckBoxView = new();
     private readonly RoundedListViewView _roundedListViewView = new();
+    private readonly PaginationView _paginationView = new();
 
     public MainWindow()
     {
@@ -27,6 +28,7 @@ public partial class MainWindow : Window
             1 => _scrollBarView,
             2 => _roundedCheckBoxView,
             3 => _roundedListViewView,
+            4 => _paginationView,
             _ => null
         };
     }
